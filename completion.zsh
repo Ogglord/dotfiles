@@ -1,0 +1,1 @@
+/Users/oscaragren/.dotfiles/zsh/completion.zsh

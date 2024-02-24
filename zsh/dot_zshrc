@@ -1,0 +1,113 @@
+HISTSIZE=20000
+SAVEHIST=20000
+HISTFILE=${ZDOTDIR}/.history
+
+# Homebrew shell completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+## zinit - install if missing
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+
+## load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit 
+
+# Most themes require promptsubst option (setopt promptsubst in zshrc), if it isn't set, then prompt will appear as something like: ... $(build_prompt) ....
+setopt promptsubst
+
+zinit load zsh-users/zsh-autosuggestions
+zinit load zdharma-continuum/fast-syntax-highlighting
+zinit load zdharma-continuum/history-search-multi-word
+zinit load zsh-users/zsh-history-substring-search
+zinit load zdharma-continuum/git-url
+
+zi snippet OMZL::git.zsh
+zi snippet OMZL::nvm.zsh
+zi snippet OMZL::functions.zsh
+zi snippet OMZL::termsupport.zsh
+zi snippet OMZP::suse
+zi snippet OMZP::git
+zi snippet OMZP::command-not-found
+zi snippet OMZL::history.zsh
+zi ice as"completion"
+zi snippet OMZL::completion.zsh
+
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+zinit light-mode depth"1" for \
+  @zdharma-continuum/zinit-annex-binary-symlink \
+  @zdharma-continuum/zinit-annex-bin-gem-node \
+  @zdharma-continuum/zinit-annex-default-ice \
+  @zdharma-continuum/zinit-annex-patch-dl \
+  @zdharma-continuum/zinit-annex-readurl
+
+# Note to self: this requires automake, pkg-config och libevent to compile
+zinit for \
+    as'null' \
+    configure"--disable-utf8proc --prefix=$ZINIT[PLUGINS_DIR]/tmux --quiet" \
+    id-as \
+    make"PREFIX=$ZINIT[PLUGINS_DIR]/tmux --quiet install"\
+    lbin'!' \
+  @tmux/tmux
+
+
+
+
+zinit default-ice --quiet as'null' from"gh-r" lbin'!' lucid nocompile completions
+
+zinit lbin'!**/eza' for @eza-community/eza
+zinit lbin'!**/fzf' for @junegunn/fzf
+
+zinit default-ice --clear --quiet
+
+zi for \
+  https://github.com/junegunn/fzf/raw/master/shell/{'completion','key-bindings'}.zsh
+
+## Completion
+autoload -Uz compinit
+compinit
+
+zinit cdreplay -q
+
+## use up-arrow and down-arrow to search history (any word)
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+
+
+# fzf
+if (( $+commands[fd] )); then
+  export FZF_DEFAULT_OPTS="--reverse --ansi"
+  export FZF_DEFAULT_COMMAND="fd ."
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+fi
+
+# git
+if (( $+commands[git] )); then
+  git config --global user.name "Ogglord"
+  git config --global user.email oag@proton.me
+fi
+
+_source $ZDOTDIR/aliases.zsh
+_source $ZDOTDIR/completion.zsh
+_source $ZDOTDIR/keybinds.zsh
+
+#zi for \
+#    atload"zicompinit; zicdreplay" \
+#    blockf \
+#    lucid \
+#    wait \
+#  @zsh-users/zsh-completions

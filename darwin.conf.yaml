@@ -25,6 +25,7 @@
     - libevent
     - autoconf
     - gcc
+    - pkg-config
 
 # Installs certain casks
 - cask:
