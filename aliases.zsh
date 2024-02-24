@@ -1,1 +1,0 @@
-/Users/oscaragren/.dotfiles/zsh/aliases.zsh

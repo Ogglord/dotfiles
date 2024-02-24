@@ -8,6 +8,9 @@
 - link:
     # Git
     ~/.gitconfig:
-    ~/.config/zsh/:
+    ~/.config/zsh/: 
       glob: true
       path: zsh/*
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
