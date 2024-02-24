@@ -1,3 +1,4 @@
+# macos is never headless (for me, include some gui apps...)
 # Sets default config for certain directives
 - defaults:
     brew:
