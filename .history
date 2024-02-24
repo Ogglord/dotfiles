@@ -4,3 +4,12 @@
 : 1708816185:0;cd ..
 : 1708816501:0;./install --force-color 
 : 1708816668:0;git add .
+: 1708816675:0;git commit -m "testing more"
+: 1708816775:0;python3
+: 1708816783:0;ls
+: 1708816793:0;./install
+: 1708816796:0;./install -v
+: 1708816922:0;dotbot
+: 1708816966:0;./dotbot/bin/dotbot --plugin-dir ./dotbot-brew -c darwin.conf.yaml
+: 1708816971:0;./dotbot/bin/dotbot --plugin-dir ./dotbot-brew -c darwin.conf.yaml -v
+: 1708817268:0;git add .
