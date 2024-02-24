@@ -101,9 +101,9 @@ if (( $+commands[git] )); then
   git config --global user.email oag@proton.me
 fi
 
-_source $ZDOTDIR/aliases.zsh
-_source $ZDOTDIR/completion.zsh
-_source $ZDOTDIR/keybinds.zsh
+_source $ZDOTDIR/scripts/aliases.zsh
+_source $ZDOTDIR/scripts/completion.zsh
+_source $ZDOTDIR/scripts/keybinds.zsh
 
 #zi for \
 #    atload"zicompinit; zicdreplay" \
