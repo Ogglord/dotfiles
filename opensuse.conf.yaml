@@ -1,0 +1,9 @@
+- zypper:
+    public_keys:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    repositories:
+      - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+    packages:
+      - fish
+      - bottom
+      - brave-browser

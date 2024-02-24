@@ -1,0 +1,36 @@
+# Sets default config for certain directives
+- defaults:
+    - brewfile:
+        - stdout: true,
+    - brew:
+        - stderr: False,
+        - stdout: False,
+
+# Installs brew if missing
+- install-brew: true
+
+# Reads brewfile for packages to install
+#- brewfile:
+#    - Brewfile
+#    - brew/Brewfile
+
+# Adds a tap
+#- tap:
+#    - caskroom/fonts
+
+# Installs certain brew packages
+- brew:
+    - git
+    - zsh
+    - libevent
+    - autoconf
+    - gcc
+
+# Installs certain casks
+- cask:
+    - 1password
+    - alacritty
+    - tailscale
+    - slack
+    - postman
+    - firefox
