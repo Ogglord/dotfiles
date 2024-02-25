@@ -19,18 +19,19 @@ OS=$(uname)
 case $OS in
     Darwin)
         echo "darwin" # darwin.conf.yaml
-        "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${OS}${SUFFIX}" --plugin-dir "dotbot-brew" "${@}"
+        echo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot-brew" -c "${OS}${SUFFIX}" "${@}"
+        "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot-brew" -c "${OS}${SUFFIX}" "${@}"
         ;;
     Linux)
     source /etc/os-release
     case $ID in
         arch)
             echo "opensuse" # opensuse.conf.yaml
-            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "${BASEDIR}/dotbot_plugin_zypper" "${@}"
+            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_plugin_zypper" "${@}"
             ;;
         debian)
             echo "debian" # debian.conf.yaml
-            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "${BASEDIR}/dotbot_apt" "${@}"
+            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_apt" "${@}"
             ;;
         *)
             echo "unknown linux distro ID: $ID, not doing anything special"

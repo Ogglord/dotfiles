@@ -3,3 +3,4 @@ clear
 export EDITOR=/bin/nano
 _source "${ZDOTDIR}/motd.zsh"
 
+eval "$(/opt/homebrew/bin/brew shellenv)"

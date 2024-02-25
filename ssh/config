@@ -1,0 +1,19 @@
+# No need to manually call ssh-add
+AddKeysToAgent yes
+CanonicalizeHostname yes
+CanonicalDomains turkey-kelvin.ts.net
+#
+# GitHub
+#
+Host github.com *.github.net *.githubapp.com
+  ForwardAgent no
+  User ogglord
+
+Host docker-one docker-one.turkey-kelvin.ts.net
+  User ogge
+
+Host *.turkey-kelvin.ts.net
+  User root
+
+Host *
+  User ogge

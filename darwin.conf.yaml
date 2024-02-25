@@ -21,6 +21,8 @@
   - autoconf
   - gcc
   - pkg-config
+  - neovim
+  - tmux
 
 # Installs certain casks
 - cask:

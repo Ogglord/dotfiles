@@ -36,6 +36,7 @@ zi snippet OMZL::functions.zsh
 zi snippet OMZL::termsupport.zsh
 zi snippet OMZP::suse
 zi snippet OMZP::git
+zi snippet OMZP::tmux
 zi snippet OMZP::command-not-found
 zi snippet OMZL::history.zsh
 zi ice as"completion"
@@ -54,26 +55,24 @@ zinit light-mode depth"1" for \
   @zdharma-continuum/zinit-annex-readurl
 
 # Note to self: this requires automake, pkg-config och libevent to compile
-zinit for \
-    as'null' \
-    configure"--disable-utf8proc --prefix=$ZINIT[PLUGINS_DIR]/tmux --quiet" \
-    id-as \
-    make"PREFIX=$ZINIT[PLUGINS_DIR]/tmux --quiet install"\
-    lbin'!' \
-  @tmux/tmux
+# zinit for \
+#     as'null' \
+#     configure"--disable-utf8proc --prefix=$ZINIT[PLUGINS_DIR]/tmux --quiet" \
+#     id-as \
+#     make"PREFIX=$ZINIT[PLUGINS_DIR]/tmux --quiet install"\
+#     lbin'!' \
+#   @tmux/tmux
 
 
+#zinit default-ice --quiet as'null' from"gh-r" lbin'!' lucid nocompile completions
 
+#zinit lbin'!**/eza' for @eza-community/eza
+#zinit lbin'!**/fzf' for @junegunn/fzf
 
-zinit default-ice --quiet as'null' from"gh-r" lbin'!' lucid nocompile completions
+#zinit default-ice --clear --quiet
 
-zinit lbin'!**/eza' for @eza-community/eza
-zinit lbin'!**/fzf' for @junegunn/fzf
-
-zinit default-ice --clear --quiet
-
-zi for \
-  https://github.com/junegunn/fzf/raw/master/shell/{'completion','key-bindings'}.zsh
+#zi for \
+#  https://github.com/junegunn/fzf/raw/master/shell/{'completion','key-bindings'}.zsh
 
 ## Completion
 autoload -Uz compinit
