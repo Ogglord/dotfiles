@@ -435,10 +435,7 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 set -g @continuum-restore 'on'
 
-
-
-set -g @resurrect-capture-pane-contents 'on'
-set -g @continuum-restore 'on'
+#set -g @resurrect-capture-pane-contents 'on'
 
 
 # -- custom variables ----------------------------------------------------------

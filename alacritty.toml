@@ -2,5 +2,20 @@
 # by Ogglord 2024-02-26
 
 [font]
-normal.family = "SauceCodePro Nerd Font"
+#normal.family = "SauceCodePro Nerd Font"
+#normal.family = "SauceCodePro Nerd Font"
+normal.family = "MesloLGL Nerd Font"
 size = 14.0
+
+[window]
+
+opacity = 0.9
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "Light" # "Dark"
+
+[env]
+TERM = "term-256color"

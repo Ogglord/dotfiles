@@ -35,8 +35,15 @@
   - pkg-config
   - neovim
   - tmux
+  - ncdu
+  - dust
+  - eza
+  - fzf
+  - bat
+  - mc
   - font-hack-nerd-font
   - font-sauce-code-pro-nerd-font
+  - font-meslo-lg-nerd-font
 
 # Installs certain casks
 - cask:

@@ -18,19 +18,18 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 OS=$(uname)
 case $OS in
     Darwin)
-        echo "darwin" # darwin.conf.yaml
-        echo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot-brew" -c "${OS}${SUFFIX}" "${@}"
+         # darwin.conf.yaml
         "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot-brew" -c "${OS}${SUFFIX}" "${@}"
         ;;
     Linux)
     source /etc/os-release
     case $ID in
         arch)
-            echo "opensuse" # opensuse.conf.yaml
+            # opensuse.conf.yaml
             sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_plugin_zypper" "${@}"
             ;;
         debian)
-            echo "debian" # debian.conf.yaml
+            # debian.conf.yaml
             sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_apt" "${@}"
             ;;
         *)
