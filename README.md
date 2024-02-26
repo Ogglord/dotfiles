@@ -16,3 +16,5 @@ exec zsh
  - dust
  - jq
  - tmux
+ - alacritty
+ - a few nerd fonts
