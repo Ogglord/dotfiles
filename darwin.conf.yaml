@@ -5,13 +5,25 @@
         stdin: true
         stderr: true
         stdout: true
+        force_intel: false
     cask:
         stdin: true
         stderr: true
         stdout: true
+        force_intel: false
+    tap:
+        stdin: true
+        stderr: true
+        stdout: true
+        force_intel: false
 
 # Installs brew if missing
 - install-brew: True
+
+- shell:
+  - [eval "$(/opt/homebrew/bin/brew shellenv)", Warming up homebrew]
+
+- tap: [ homebrew/cask-fonts ]
 
 # Installs certain brew packages
 - brew:
@@ -23,6 +35,8 @@
   - pkg-config
   - neovim
   - tmux
+  - font-hack-nerd-font
+  - font-sauce-code-pro-nerd-font
 
 # Installs certain casks
 - cask:

@@ -1,0 +1,6 @@
+# $HOME/.config/alacritty/alacritty.toml
+# by Ogglord 2024-02-26
+
+[font]
+normal.family = "SauceCodePro Nerd Font"
+size = 14.0
