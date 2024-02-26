@@ -9,13 +9,16 @@ size = 14.0
 
 [window]
 
+padding.x = 8
+padding.y = 5
+
+decorations = "Transparent"
+decorations_theme_variant = "None" # "Dark"
+
 opacity = 0.9
+blur = true
 
-padding.x = 10
-padding.y = 10
-
-decorations = "Full"
-decorations_theme_variant = "Light" # "Dark"
+option_as_alt = "OnlyLeft"
 
 [env]
 TERM = "term-256color"

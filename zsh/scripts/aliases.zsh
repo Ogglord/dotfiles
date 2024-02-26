@@ -19,6 +19,8 @@ alias gurl='curl --compressed'
 alias shutdown='sudo shutdown'
 alias reboot='sudo reboot'
 
+
+
 # An rsync that respects gitignore
 rcp() {
   # -a = -rlptgoD
@@ -47,6 +49,10 @@ alias rcpdu='rcpd --chmod=go='
 alias jc='journalctl -xe'
 alias sc=systemctl
 alias ssc='sudo systemctl'
+
+if (( $+commands[nvim] )); then
+  alias vim=nvim;
+fi
 
 if (( $+commands[exa] )); then
   alias ls="exa --group-directories-first --git";
