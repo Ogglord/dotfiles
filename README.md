@@ -5,7 +5,7 @@ Using dotbot to kickstart a new machine, zinit to give zsh a charge
 
 ## To get started:
 ```bash
-git clone https://github.com/Ogglord/dotfiles.git && cd dotfiles
+git clone https://github.com/Ogglord/dotfiles.git ~/.dotfiles && cd .dotfiles
 ./install
 exec zsh
 ```
