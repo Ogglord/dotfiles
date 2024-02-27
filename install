@@ -30,7 +30,7 @@ case $OS in
             ;;
         debian)
             # debian.conf.yaml
-            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot_apt" -c "${ID}${SUFFIX}" "${@}"
+            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot-apt" -c "${ID}${SUFFIX}" "${@}"
             ;;
         *)
             echo "unknown linux distro ID: $ID, not doing anything special"
