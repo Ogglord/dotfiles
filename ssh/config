@@ -12,7 +12,7 @@ Host github.com *.github.net *.githubapp.com
 Host docker-one docker-one.turkey-kelvin.ts.net
   User ogge
 
-Host *.turkey-kelvin.ts.net
+Host dns *.turkey-kelvin.ts.net
   User root
 
 Host *

@@ -1,1 +1,15 @@
 # install some apt shit for zsh, zinit to compile/install the rest...
+# missing: eza & dust
+- apt:
+  - git
+  - zsh
+  - libevent-dev
+  - autoconf
+  - gcc
+  - pkg-config
+  - neovim
+  - tmux
+  - ncdu
+  - fzf
+  - bat
+  - mc
