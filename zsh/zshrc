@@ -34,13 +34,16 @@ zi snippet OMZL::git.zsh
 zi snippet OMZL::nvm.zsh
 zi snippet OMZL::functions.zsh
 zi snippet OMZL::termsupport.zsh
-zi snippet OMZP::suse
 zi snippet OMZP::git
 zi snippet OMZP::tmux
 zi snippet OMZP::command-not-found
 zi snippet OMZL::history.zsh
 zi ice as"completion"
 zi snippet OMZL::completion.zsh
+
+if (( $+commands[zypper] )); then
+  zi snippet OMZP::suse
+fi
 
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \

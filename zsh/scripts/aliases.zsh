@@ -74,6 +74,11 @@ if (( $+commands[eza] )); then
   alias tree='eza --tree'
 fi
 
+if (( $+commands[zoxide] )); then
+  unalias z 2>/dev/null
+  alias cd="z"
+fi
+
 if (( $+commands[fasd] )); then
   # fuzzy completion with 'z' when called without args
   unalias z 2>/dev/null
