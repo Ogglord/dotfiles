@@ -87,7 +87,9 @@ zinit cdreplay -q
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
 
 # fzf
 if (( $+commands[fd] )); then
@@ -107,9 +109,3 @@ _source $ZDOTDIR/scripts/aliases.zsh
 _source $ZDOTDIR/scripts/completion.zsh
 _source $ZDOTDIR/scripts/keybinds.zsh
 
-#zi for \
-#    atload"zicompinit; zicdreplay" \
-#    blockf \
-#    lucid \
-#    wait \
-#  @zsh-users/zsh-completions
