@@ -16,7 +16,9 @@
     ~/.config/zsh/scripts:
       glob: true
       path: zsh/scripts/*
-    ~/.config/tmux/tmux.conf: tmux/oh-my-tmux/.tmux.conf
+    ~/.config/tmux/tmux.conf: 
+      force: true
+      path: tmux/oh-my-tmux/.tmux.conf
     ~/.config/tmux/tmux.conf.local: tmux/tmux.conf.local
     ~/.config/alacritty/alacritty.toml: 
       path: alacritty.toml
