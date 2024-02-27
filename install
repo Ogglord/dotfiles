@@ -26,11 +26,11 @@ case $OS in
     case $ID in
         arch)
             # opensuse.conf.yaml
-            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_plugin_zypper" "${@}"
+            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot_plugin_zypper" -c "${ID}${SUFFIX}" "${@}"
             ;;
         debian)
             # debian.conf.yaml
-            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${ID,,}${SUFFIX}" --plugin-dir "dotbot_apt" "${@}"
+            sudo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir "dotbot_apt" -c "${ID}${SUFFIX}" "${@}"
             ;;
         *)
             echo "unknown linux distro ID: $ID, not doing anything special"
