@@ -75,8 +75,8 @@ if (( $+commands[eza] )); then
 fi
 
 if (( $+commands[zoxide] )); then
-  unalias z 2>/dev/null
-  alias cd="z"
+  #unalias z 2>/dev/null
+  #alias cd="z"
 fi
 
 if (( $+commands[fasd] )); then
