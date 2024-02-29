@@ -8,5 +8,7 @@
 		"git.ignoreSubmodules": true,
 		"git.autoRepositoryDetection": false,
 		"editor.formatOnSave": true,
+		"git.confirmSync": false,
+		"git.postCommitCommand": "push"
 	}
 }
