@@ -57,6 +57,21 @@ zinit light-mode depth"1" for \
   @zdharma-continuum/zinit-annex-patch-dl \
   @zdharma-continuum/zinit-annex-readurl
 
+
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+
+
+ZELLIJ_PLUGINS="${XDG_DATA_HOME:-${HOME}/.local/share}/zellij/plugins"
+[ ! -d $ZELLIJ_PLUGINS ] && mkdir -p ~/.local/share/zellij/plugins
+
+zi ice from"gh-r" id-as"zellij-forgot" as"program" bpick"zellij_forgot.wasm" mv"*.wasm -> $ZELLIJ_PLUGINS/"
+zinit light karimould/zellij-forgot
+
+zi ice from"gh-r" id-as"zellij-zjstatus" as"program" bpick"zjstatus.wasm" mv"*.wasm -> $ZELLIJ_PLUGINS/"
+zinit light dj95/zjstatus
+
 # Note to self: this requires automake, pkg-config och libevent to compile
 # zinit for \
 #     as'null' \
