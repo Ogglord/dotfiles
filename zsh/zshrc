@@ -126,3 +126,4 @@ _source $ZDOTDIR/scripts/aliases.zsh
 _source $ZDOTDIR/scripts/completion.zsh
 _source $ZDOTDIR/scripts/keybinds.zsh
 
+eval "$(zellij setup --generate-auto-start zsh)"

@@ -7,7 +7,6 @@
 
 - link:
     # Git
-    ~/.gitconfig:
     ~/.ssh/config: ssh/config
     ~/.config/zsh/:
       glob: true
@@ -29,6 +28,8 @@
       force: true
 
 - shell:
+    - [git config --global user.name Ogglord, Set git user.name]
+    - [git config --global user.email oag@proton.me, Set git user.email]
     - [git submodule update --init --recursive, Installing submodules]
 
 - create:
