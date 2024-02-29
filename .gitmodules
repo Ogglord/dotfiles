@@ -5,6 +5,7 @@
 [submodule "dotbot-brew"]
 	path = dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
+	ignore = dirty
 [submodule "dotbot-apt"]
 	path = dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
