@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "/Users/oscaragren/.dotfiles"
+		}
+	],
+	"settings": {
+		"git.ignoreSubmodules": true,
+		"git.autoRepositoryDetection": false,
+		"editor.formatOnSave": true,
+	}
+}
