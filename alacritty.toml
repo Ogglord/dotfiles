@@ -5,10 +5,11 @@
 #normal.family = "SauceCodePro Nerd Font"
 #normal.family = "SauceCodePro Nerd Font"
 normal.family = "MesloLGL Nerd Font"
-size = 14.0
+size = 13.0
 
 [window]
-
+dimensions.columns = 120
+dimensions.lines = 30
 padding.x = 8
 padding.y = 5
 
@@ -22,3 +23,7 @@ option_as_alt = "OnlyLeft"
 
 [env]
 TERM = "term-256color"
+
+[selection]
+semantic_escape_chars =''
+save_to_clipboard = true

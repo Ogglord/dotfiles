@@ -17,3 +17,6 @@
 [submodule "tmux/oh-my-tmux"]
 	path = tmux/oh-my-tmux
 	url = https://github.com/gpakosz/.tmux
+[submodule "dotbot-rust"]
+	path = dotbot-rust
+	url = https://github.com/Ogglord/dotbot-rust

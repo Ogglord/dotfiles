@@ -30,7 +30,26 @@
 - create:
     - ~/downloads
     - ~/.local/bin
+    - ~/.local/share
 - create:
     ~/.ssh:
       mode: 0700
     ~/repos:
+
+- rust:
+    env: # these needs to be set in your .zshenv, .bashenv or similar for rustup to find the toolchain(s)
+         # if you want to use a different toolchain than the default, you can set it here
+        CARGO_HOME: ~/.local/share/cargo
+        RUSTUP_HOME: ~/.local/share/rustup
+    args:
+      - --no-modify-path  # remember to add $CARGO_HOME/bin to your $PATH if you use this option
+      - --default-toolchain=stable
+      - --profile=default
+
+# Installs certain rust packages
+- cargo:
+    - eza
+    - zellij
+    - du-dust
+    - zoxide
+    - bat

@@ -1,10 +1,13 @@
-# run for every zsh
-
 typeset -U path PATH
-path=(~/.local/bin $path)
+path+=~/.local/bin
+path+=~/.local/share/npm/bin
+path+=~/.local/share/cargo/bin
 export PATH
 
 skip_global_compinit=1
+
+export RUSTUP_HOME="$HOME/.local/share/rustup"
+export CARGO_HOME="$HOME/.local/share/cargo"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -23,9 +26,25 @@ export MANGOHUD=1
 
 function _source {
   for file in "$@"; do
-    [ -r $file ] && source $file
+    if [ -r "$file" ]; then
+      source "$file"
+    else
+      if ! [[ -v SILENT ]]; then
+        echo "Error: File $file does not exist or is not readable."
+      fi
+    fi
   done
 }
+
+# Be more restrictive with permissions; no one has any business reading things
+# that don't belong to them.
+if (( EUID != 0 )); then
+  umask 027
+else
+  # Be even less permissive if root.
+  umask 077
+fi
+
 
 # Be more restrictive with permissions; no one has any business reading things
 # that don't belong to them.
